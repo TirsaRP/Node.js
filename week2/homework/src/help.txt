@@ -1,0 +1,14 @@
+--- No command or help: shows help section 
+ex: 'node index.js' or 'node index.js help'
+
+--- List: shows current to-dos, or shows an appropriate text if there are no to-dos.
+ex: 'node index.js list'
+
+--- Add: adds a to-do item. All the words behind add must be a string and are entered as 1 to-do item to the list.
+ex: 'node index.js add "Buy groceries"' 
+
+--- Remove: removes a to-do item by its 1-base index, e.g. to remove second item, 
+ex: 'node index.js remove 2'
+
+--- Reset: removes all to-do items from the list. 
+ex: 'node index.js reset'

@@ -11,6 +11,7 @@ function createServer(port) {
 
   const server = http.createServer((request, response) => {
     // TODO: Write your homework code here
+
     if (request.url === '/state') {
       response.writeHead(200, { 'Content-Type': 'application/json' });
       let currentState = { 'state': state };
