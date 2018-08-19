@@ -28,6 +28,11 @@ app.get(`/${TODO_SLUG}`,        readTodos.bind(null, todo));
 app.put(`/${TODO_SLUG}/:id`,    updateTodo.bind(null, todo));
 app.delete(`/${TODO_SLUG}/:id`, deleteTodo.bind(null, todo));
 
+app.delete(`/${TODO_SLUG}`,     markAsNotDone.bind(null, todo));  //why not put or post?? 
+app.post(`/${TODO_SLUG}`,       markAsDone.bind(null, todo));
+app.get(`/${TODO_SLUG}`,        readTodo.bind(null, todo));
+app.delete(`/${TODO_SLUG}/:id`, clearTodos.bind(null, todo));
+
 app.listen(PORT, error => {
   if (error)
     return console.error(error);
