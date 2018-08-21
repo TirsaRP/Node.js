@@ -3,10 +3,10 @@
 function markAsNotDone(todo, request, response) {
   const id = request.params.id;
 
-  todo.delete_(id)
-    .then(() => {
-      response.status(204);
-      response.end();
+ todo.markAsNotDone(id).then(()=>{return todo.findTodo(id)})
+    .then((todo) => {
+      response.status(200);
+      response.json({todo});
     })
     .catch(({ message }) => {
       response.status(500);

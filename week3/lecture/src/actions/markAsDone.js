@@ -1,10 +1,11 @@
 'use strict';
 
 function markAsDone (todo, request, response) {
-  todo.read()
-    .then(todos => {
-      response.json({ todos });
-      response.end();
+  const id= request.params.id;
+  todo.markAsDone(id).then(()=>{ return todo.findTodo(id)})
+    .then((todo) => {
+      response.status(200);
+      response.json({todo});
     })
     .catch(({ message }) => {
       response.status(500);
